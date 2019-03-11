@@ -1,12 +1,9 @@
-const EventEmitter = require('events');
+const Logger = require('./logger');
 
-const eventObject = new EventEmitter();
+const loggerObject = new Logger();
 
-eventObject.on('messageHandler', (args) => {
+loggerObject.on('messageHandler', (args) => {
   console.log('Event has been captured!' + args.name + args.age);
 });
 
-eventObject.emit('messageHandler', {
-  name: 'Vinodh',
-  age: 32
-});
+loggerObject.log();
